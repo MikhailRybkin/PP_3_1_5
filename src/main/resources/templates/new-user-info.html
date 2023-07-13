@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Add new user</title>
+</head>
+<body>
+
+<br>
+
+<form width="50%" th:method = "POST" th:action = "@{/admin/}" th:object= "${user}">
+    <label for = "name"> Enter name:</label>
+    <input type = "text" th:field = "*{name}" id = "name"/>
+    <br>
+    <br>
+    <label for = "lastName"> Enter Lastname:</label>
+    <input type = "text" th:field = "*{lastName}" id = "lastName"/>
+    <br>
+    <br>
+    <label for = "age"> Enter age:</label>
+    <input type = "text" th:field = "*{age}" id = "age"/>
+    <br>
+    <br>
+    <label>Enter role:
+        <select size="2" multiple name="roles" >
+            <option value="1">ADMIN</option>
+            <option selected="selected" value="2">USER</option>
+        </select>
+    </label>
+    <br>
+    <br>
+    <label for = "password"> Enter password:</label>
+    <input type = "text" th:field = "*{password}" id = "password"/>
+    <br>
+</form>
+<br>
+<br>
+<input type = "submit" value = "OK"/>
+<input align="right" type = "button" value = "logout"
+       onclick = "window.location.href = '/logout'"/>
+
+</body>
+</html>
+
