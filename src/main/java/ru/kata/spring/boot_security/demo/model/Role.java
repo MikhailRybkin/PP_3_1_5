@@ -5,12 +5,12 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "roles",
+        uniqueConstraints = @UniqueConstraint(columnNames = "name"))
 public class Role implements GrantedAuthority {
     @Id
     @Column(name = "id")
